@@ -58,8 +58,7 @@ public class UserController {
 	
 	
 	//delete user by id
-	//@DeleteMapping("{/id}")
-	@RequestMapping(value = {"{/id}"}, method = {RequestMethod.DELETE})
+	@DeleteMapping("{/id}")
 	public ResponseEntity<User> deleteUser(@PathVariable ("id") long userId){
 		User existingUser = this.userRepository.findById(userId)
 				.orElseThrow(() -> new ResourceNotFoundException("User not found with id :" + userId));
